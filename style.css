@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: #FAF7F2;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    color: #282730;
+}
+
+h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 48px;
+    font-weight: 500;
+}
+
+h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+#landing {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 24px;
+}
+
+#counter {
+    font-size: 18px;
+    color: #726C79;
+    letter-spacing: 0.05em;
+}
