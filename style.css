@@ -35,3 +35,18 @@ h2 {
     color: #726C79;
     letter-spacing: 0.05em;
 }
+
+#archive {
+    padding: 120px 24px;
+    text-align: center;
+}
+
+#archive-list {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 48px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
