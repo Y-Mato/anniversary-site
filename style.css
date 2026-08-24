@@ -28,6 +28,24 @@ h2 {
     justify-content: center;
     text-align: center;
     gap: 24px;
+    position: relative;
+}
+
+#scroll-down {
+    position: absolute;
+    bottom: 56px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: none;
+    border: none;
+    color: #726C79;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+#scroll-down:hover {
+    opacity: 1;
 }
 
 #counter {

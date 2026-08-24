@@ -6,6 +6,8 @@ const archiveListEl = document.getElementById("archive-list");
 const modalEl = document.getElementById("modal");
 const modalCloseEl = document.getElementById("modal-close");
 const modalBodyEl = document.getElementById("modal-body");
+const scrollDownEl = document.getElementById("scroll-down");
+const archiveEl = document.getElementById("archive");
 
 let years = today.getFullYear() - startDate.getFullYear();
 let months = today.getMonth() - startDate.getMonth();
@@ -30,7 +32,7 @@ const anniversaries = [
         date: "2025-08-24",
         thumbnail: "photos/IMG_5935.jpg",
         timeline: [
-            {date: "2025-08-24", title: "1年記念日", description: ""}
+            {date: "2025-08-24", title: "1年記念日", description: "思い出：ジブリ展,ピクミンテラス,吉和花火大会,東京旅行"}
         ],
         photos: ["photos/year1-1.jpg", "photos/year1-2.jpg"],
         letter: ""
@@ -47,7 +49,9 @@ const anniversaries = [
     }
 ];
 
-
+scrollDownEl.addEventListener("click", () => {
+    archiveEl.scrollIntoView({behavior: "smooth"});
+});
 
 anniversaries.forEach((item) => {
     const itemEl = document.createElement("div");
@@ -76,7 +80,6 @@ anniversaries.forEach((item) => {
 
         modalBodyEl.innerHTML = `
             <h3>${item.year}年目</h3>
-            <p class="modal-date">${item.date}</p>
             <h4>タイムライン</h4>
             ${timelineHTML}
             <h4>写真</h4>
