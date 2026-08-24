@@ -8,8 +8,8 @@
   - 理由: 制作者(自分)はまだ学習途中で、フレームワークの学習コストとデザインへの集中を同時にやると消耗しやすい。まずは基礎で完成させることを優先。バックエンド(ゲストブック機能など)は将来的に別途本気で学ぶ機会に回す。
 - ビルドツールなし。npm不要。ブラウザで直接開ける構成。
 - 開発環境: VSCode + Live Server拡張。
-- バージョン管理: Git + GitHub。リポジトリは既に作成・初回push済み。
-- ホスティング予定: GitHub Pages。
+- バージョン管理: Git + GitHub。
+- ホスティング: GitHub Pagesで公開中(https://y-mato.github.io/anniversary-site/)。
 
 ## サイトの機能・構成(確定事項)
 
@@ -59,38 +59,17 @@
 - 毎年の更新タイミングで、Gitタグ(例: `2周年版`, `3周年版`)を付けてコミットしておくと、サイトの成長record自体が記録として残る。
 
 ## 現在の進捗
-- Git init / add / commit 完了。GitHubリポジトリ作成・初回push完了。
-- `index.html` の基本骨組みを作成済み:
-  ```html
-  <!DOCTYPE html>
-  <html lang="ja">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2人の記念日</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-
-    <section id="landing">
-      <h1>〇〇 & △△</h1>
-      <p id="counter">読み込み中...</p>
-    </section>
-
-    <script src="script.js"></script>
-  </body>
-  </html>
-  ```
-- `style.css`, `script.js` は空ファイルの状態。
+- HTML / CSS / JS 一通り実装完了(ランディング・記念日アーカイブ・モーダル)。
+- `anniversaries`データ配列でデータ駆動のアイコン自動生成、モーダルでのタイムライン/写真/手紙表示まで実装済み。1年目(2025-08-24)分のデータを登録(タイムラインの`description`と`letter`は未執筆のプレースホルダー)。
+- レスポンシブ対応確認済み(スマホ幅で崩れなし)。
+- GitHub Pagesで公開済み: https://y-mato.github.io/anniversary-site/
+- 2026-08-24(交際2周年)時点の状態に`2周年版`タグを付与、GitHubにpush済み。
 
 ## 次にやること(TODO)
-1. `style.css` で全体の見た目(白・クリームベース + 紫アクセント)を整える。
-2. `script.js` で交際日数の動的カウンター機能を実装する。
-3. `anniversaries` データ配列の設計・実装。
-4. データ配列からアイコンを自動生成するレンダリング処理。
-5. アイコンクリックでモーダルを開閉する処理、モーダル内にその年のタイムライン/写真/手紙を表示する処理。
-6. レスポンシブ対応の確認(スマホでの見え方)。
-7. GitHub Pagesで公開。
+1. 2年目(2026-08-24)分のデータを`anniversaries`配列に追加する。
+2. 1年目のタイムライン`description`と`letter`の実際の文章を書く。
+3. 実際の写真を`photos`フォルダに追加し、`thumbnail`/`photos`のパスを本物に差し替える(現状1年目の`thumbnail`のみ実写真、`photos`配列は未設定)。
+4. (任意)ユーザーが「遊び心が欲しい」と言ったタイミングで、控えめなアニメーションなどをピンポイントで追加検討する。
 
 ## 学習方針の補足(制作者について)
 - Web開発の学習をハッカソン形式のインターンで始めたばかりで、現在Progateで基礎(HTML/CSS/JS)を学習中。
