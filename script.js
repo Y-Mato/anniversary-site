@@ -30,9 +30,19 @@ const anniversaries = [
         date: "2025-08-24",
         thumbnail: "photos/IMG_5935.jpg",
         timeline: [
-            {date: "2024-08-24", title: "付き合い始めた日", description: ""}
+            {date: "2025-08-24", title: "1年記念日", description: ""}
         ],
         photos: ["photos/year1-1.jpg", "photos/year1-2.jpg"],
+        letter: ""
+    },
+    {
+        year: 2,
+        date: "2026-08-24",
+        thumbnail: "photos/IMG_8213.jpg",
+        timeline: [
+            {date: "2026-08-24", title: "2年記念日", description: ""}
+        ],
+        photos: [],
         letter: ""
     }
 ];
