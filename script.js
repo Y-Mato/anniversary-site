@@ -39,7 +39,7 @@ const anniversaries = [
         date: "2025-08-24",
         thumbnail: "photos/year1/IMG_5935.jpg",
         timeline: [
-            {date: "2025-08-24", title: "1年記念日", description: "思い出：ジブリ展,ピクミンテラス,吉和花火大会,東京旅行,宇品花火大会"}
+            {date: "2025-08-24", title: "1年記念日", description: "思い出：ジブリ展,ピクミンテラス,吉和花火大会,東京旅行,宇品花火大会,弾丸アクアス"}
         ],
         photos: [
         "photos/year1/8BF7B3E5-C186-4589-A6D6-4A72B1FB087B.jpeg",
@@ -92,7 +92,7 @@ const anniversaries = [
         date: "2026-08-24",
         thumbnail: "photos/year2/IMG_8213.jpg",
         timeline: [
-            {date: "2026-08-24", title: "2年記念日", description: ""}
+            {date: "2026-08-24", title: "2年記念日", description: "思い出：ねぐせ。ライブ,九州旅行,成人式,沖縄旅行,弾丸島根"}
         ],
         photos: [
         "photos/year2/6F153438-AE1B-40FF-8532-EB9114FC31F8.jpeg",
