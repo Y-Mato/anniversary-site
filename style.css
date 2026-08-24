@@ -94,3 +94,52 @@ h2 {
     font-size: 20px;
     color: #726C79;
 }
+
+.archive-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    cursor: pointer;
+}
+
+.archive-photo {
+    position: relative;
+    width: 156px;
+    height: 156px;
+}
+
+.archive-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #E5DFD6;
+}
+
+.archive-badge {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    border: 1.5px solid #7A5A99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    color: #7A5A99;
+}
+
+.archive-year-label {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.archive-date-label {
+    font-size: 12px;
+    color: #726C79;
+}
