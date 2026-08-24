@@ -2,6 +2,10 @@ const startDate = new Date(2024, 7, 24);
 const today = new Date();
 
 const counterEl = document.getElementById("counter");
+const archiveListEl = document.getElementById("archive-list");
+const modalEl = document.getElementById("modal");
+const modalCloseEl = document.getElementById("modal-close");
+const modalBodyEl = document.getElementById("modal-body");
 
 let years = today.getFullYear() - startDate.getFullYear();
 let months = today.getMonth() - startDate.getMonth();
@@ -33,7 +37,7 @@ const anniversaries = [
     }
 ];
 
-const archiveListEl = document.getElementById("archive-list");
+
 
 anniversaries.forEach((item) => {
     const itemEl = document.createElement("div");
@@ -47,6 +51,37 @@ anniversaries.forEach((item) => {
         <div class="archive-year-label">${item.year}年目</div>
         <div class="archive-date-label">${item.date}</div>
     `;
+    itemEl.addEventListener("click", () => {
+        const timelineHTML = item.timeline.map((entry) => `
+            <div class="timeline-entry">
+                <p class="timeline-date">${entry.date}</p>
+                <p class="timeline-title">${entry.title}</p>
+                <p class="timeline-description">${entry.description}</p>
+            </div>
+        `).join("");
+
+        const photosHTML = item.photos.map((src) => `
+            <img src="${src}" alt="${item.year}年目の写真">
+        `).join("");
+
+        modalBodyEl.innerHTML = `
+            <h3>${item.year}年目</h3>
+            <p class="modal-date">${item.date}</p>
+            <h4>タイムライン</h4>
+            ${timelineHTML}
+            <h4>写真</h4>
+            ${photosHTML}
+            <h4>手紙</h4>
+            <p class="modal-letter">${item.letter}</p>
+        `;
+
+        modalEl.classList.remove("hidden");
+    })
 
     archiveListEl.appendChild(itemEl)
 });
+
+
+modalCloseEl.addEventListener("click", () => {
+    modalEl.classList.add("hidden");
+})
