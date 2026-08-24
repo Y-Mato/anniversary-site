@@ -213,8 +213,16 @@ anniversaries.forEach((item) => {
             <h3>${item.year}年目</h3>
             <h4>タイムライン</h4>
             ${timelineHTML}
-            <h4>写真</h4>
-            ${photosHTML}
+            <h4 class="photos-toggle">
+                <svg class="toggle-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 6l6 6-6 6" />
+                </svg>
+                写真
+            </h4>
+
+            <div class="photos-grid hidden">
+                ${photosHTML}
+            </div>
             <h4>手紙</h4>
             <p class="modal-letter">${item.letter}</p>
         `;
@@ -228,6 +236,15 @@ anniversaries.forEach((item) => {
                 lightboxEl.classList.remove("hidden");
             });
         });
+
+        const photosToggleEl = modalBodyEl.querySelector(".photos-toggle");
+        const photosGridEl = modalBodyEl.querySelector(".photos-grid");
+        photosToggleEl.addEventListener("click", () => {
+            photosGridEl.classList.toggle("hidden");
+            photosToggleEl.classList.toggle("expanded");
+        });
+
+
 
 
         modalEl.classList.remove("hidden");
