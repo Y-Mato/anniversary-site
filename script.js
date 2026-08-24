@@ -10,6 +10,11 @@ const scrollDownEl = document.getElementById("scroll-down");
 const archiveEl = document.getElementById("archive");
 const lightboxEl = document.getElementById("lightbox");
 const lightboxImgEl = document.getElementById("lightbox-img");
+const lightboxPrevEl = document.getElementById("lightbox-prev");
+const lightboxNextEl = document.getElementById("lightbox-next");
+
+let currentPhotos = [];
+let currentPhotoIndex = 0;
 
 let years = today.getFullYear() - startDate.getFullYear();
 let months = today.getMonth() - startDate.getMonth();
@@ -89,8 +94,88 @@ const anniversaries = [
         timeline: [
             {date: "2026-08-24", title: "2年記念日", description: ""}
         ],
-        photos: [],
-        letter: ""
+        photos: [
+        "photos/year2/6F153438-AE1B-40FF-8532-EB9114FC31F8.jpeg",
+        "photos/year2/BA195A75-8CAE-4744-AA35-7E6194EDF82E.jpeg",
+        "photos/year2/DDBC34AB-4A0A-4747-A7FC-FEF6990EB7AE.jpeg",
+        "photos/year2/IMG_0735.jpeg",
+        "photos/year2/IMG_0765.jpeg",
+        "photos/year2/IMG_0772.jpeg",
+        "photos/year2/IMG_0779.jpeg",
+        "photos/year2/IMG_0970.jpeg",
+        "photos/year2/IMG_1242.jpeg",
+        "photos/year2/IMG_1246.jpeg",
+        "photos/year2/IMG_1271.jpeg",
+        "photos/year2/IMG_1275.jpeg",
+        "photos/year2/IMG_1283.jpeg",
+        "photos/year2/IMG_1284.jpeg",
+        "photos/year2/IMG_1285.jpeg",
+        "photos/year2/IMG_1301.jpeg",
+        "photos/year2/IMG_1309.jpeg",
+        "photos/year2/IMG_1316.jpeg",
+        "photos/year2/IMG_1373.jpeg",
+        "photos/year2/IMG_1380.jpeg",
+        "photos/year2/IMG_2311.jpeg",
+        "photos/year2/IMG_4080.jpeg",
+        "photos/year2/IMG_4083.jpeg",
+        "photos/year2/IMG_4151.jpeg",
+        "photos/year2/IMG_4166.jpeg",
+        "photos/year2/IMG_6076.jpeg",
+        "photos/year2/IMG_6124.jpeg",
+        "photos/year2/IMG_6127.jpeg",
+        "photos/year2/IMG_6153.jpeg",
+        "photos/year2/IMG_6156.jpeg",
+        "photos/year2/IMG_6221.jpeg",
+        "photos/year2/IMG_6532.jpeg",
+        "photos/year2/IMG_6558.jpeg",
+        "photos/year2/IMG_6559.jpeg",
+        "photos/year2/IMG_6566.jpeg",
+        "photos/year2/IMG_6664.jpeg",
+        "photos/year2/IMG_6757.jpeg",
+        "photos/year2/IMG_6843.jpeg",
+        "photos/year2/IMG_6885.jpeg",
+        "photos/year2/IMG_6887.jpeg",
+        "photos/year2/IMG_6890.jpeg",
+        "photos/year2/IMG_6965.jpeg",
+        "photos/year2/IMG_6968.jpeg",
+        "photos/year2/IMG_6969.jpeg",
+        "photos/year2/IMG_6987.jpeg",
+        "photos/year2/IMG_6995.jpeg",
+        "photos/year2/IMG_7108.jpeg",
+        "photos/year2/IMG_7437.jpeg",
+        "photos/year2/IMG_7442.jpeg",
+        "photos/year2/IMG_7581.jpeg",
+        "photos/year2/IMG_7739.jpeg",
+        "photos/year2/IMG_7826.jpeg",
+        "photos/year2/IMG_7870.jpeg",
+        "photos/year2/IMG_8061.jpeg",
+        "photos/year2/IMG_8063.jpeg",
+        "photos/year2/IMG_8075.jpeg",
+        "photos/year2/IMG_8077.jpeg",
+        "photos/year2/IMG_8085.jpeg",
+        "photos/year2/IMG_8177.jpeg",
+        "photos/year2/IMG_8213.jpg",
+        "photos/year2/P1010029.jpeg",
+        "photos/year2/P1010041.jpeg",
+        "photos/year2/dhalf_2025-09-15_173308.934.jpeg",
+        "photos/year2/dhalf_2025-09-25_134548.223.jpeg",
+        "photos/year2/dhalf_2025-11-24_165111.736.jpeg",
+        "photos/year2/dhalf_2025-12-25_191423.064.jpeg",
+        "photos/year2/dhalf_2026-02-12_21221705A7BC4AF632.jpeg",
+        "photos/year2/dhalf_2026-08-22_185202D3DA7CEE240F.jpeg",
+        "photos/year2/dji_mimo_20250923_165936_20250923165935_1758635700151_photo.jpeg",
+        "photos/year2/dji_mimo_20250923_170342_20250923170342_1758635698404_photo.jpeg",
+        "photos/year2/dji_mimo_20250924_153538_20250924153538_1758699001019_photo.jpeg",
+        "photos/year2/dji_mimo_20250924_160814_20250924160814_1758698996148_photo.jpeg",
+        "photos/year2/dji_mimo_20250924_161006_20250924161006_1758698990524_photo.jpeg",
+        "photos/year2/dji_mimo_20250924_161012_20250924161013_1758698989920_photo.jpeg",
+        "photos/year2/dji_mimo_20250924_161208_20250924161208_1758698987918_photo.jpeg",
+        "photos/year2/dji_mimo_20260404_195006_20260404195007_1778040526613_photo.jpeg",
+        "photos/year2/dji_mimo_20260404_195500_20260404195500_1778040503426_photo.jpeg",
+        "photos/year2/dji_mimo_20260506_115526_20260506115526_1778040501418_photo.jpeg",
+        "photos/year2/dji_mimo_20260506_115700_20260506115700_1778040499709_photo.jpeg"
+        ],
+        letter: "2年目です！長いようで短い2年だったなって思います。何度も喧嘩したけど、結局仲良くなれる関係をこれからも続けていきたいです！さくは行きたいところをたくさん言ってくれるから全部行こうね。今年は就活でさくも不安なことがあると思うけど、頑張るので応援してください。ここで、初めて言うことです。プロポーズするまであと１年もないよ。これからもよろしくね！"
     }
 ];
 
@@ -135,12 +220,15 @@ anniversaries.forEach((item) => {
         `;
 
         const photoEls = modalBodyEl.querySelectorAll(".modal-photo");
-        photoEls.forEach((photoEl) => {
+        photoEls.forEach((photoEl, index) => {
             photoEl.addEventListener("click", () => {
+                currentPhotos = item.photos;
+                currentPhotoIndex = index;
                 lightboxImgEl.src = photoEl.src;
                 lightboxEl.classList.remove("hidden");
             });
         });
+
 
         modalEl.classList.remove("hidden");
     })
@@ -154,4 +242,16 @@ modalCloseEl.addEventListener("click", () => {
 
 lightboxEl.addEventListener("click", () => {
     lightboxEl.classList.add("hidden");
+});
+
+lightboxPrevEl.addEventListener("click", (event) => {
+    event.stopPropagation();
+    currentPhotoIndex = (currentPhotoIndex - 1 + currentPhotos.length) % currentPhotos.length;
+    lightboxImgEl.src = currentPhotos[currentPhotoIndex];
+});
+
+lightboxNextEl.addEventListener("click", (event) => {
+    event.stopPropagation();
+    currentPhotoIndex = (currentPhotoIndex + 1) % currentPhotos.length;
+    lightboxImgEl.src = currentPhotos[currentPhotoIndex];
 });
