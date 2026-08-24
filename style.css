@@ -113,6 +113,63 @@ h2 {
     color: #726C79;
 }
 
+#modal-body h3{
+    font-family: 'Noto Serif JP', serif;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+#modal-body h4 {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: #726C79;
+    font-weight: 500;
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+#modal-body img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.modal-letter {
+    background-color: #F5F0E8;
+    border-left: 2px solid #7A5A99;
+    padding: 20px 24px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px;
+    line-height: 2;
+    white-space: pre-line;
+}
+
+.timeline-entry {
+    margin-bottom: 16px;
+}
+
+.timeline-date {
+    font-size: 12px;
+    color: #726C79;
+}
+
+.timeline-title {
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+.timeline-description {
+    font-size: 13px;
+    color: #726C79;
+    margin-top: 4px;
+    line-height: 1.6;
+}
+
 .archive-item {
     display: flex;
     flex-direction: column;
